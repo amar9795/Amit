@@ -1,0 +1,58 @@
+import java.util.regex.Pattern;
+
+public class Validation {
+    public boolean length(String s,int length1,int length2){
+        if(s.length()>=length1&&s.length()<=length2)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+    public boolean length(double num,int length1,int length2)
+    {int count=0;
+        int n=(int)num;
+        while(n!=0)
+        {
+            n=n/10;
+            count++;
+        }
+        if(count<length1||count>length2)
+        {
+            return false;
+        }
+        return true;
+    }
+    public boolean nameCharacter(String s){
+        return Pattern.matches("[^0-9%/&*()!@#$-+]+",s);
+    }
+    public boolean isNum(String s){
+        return Pattern.matches("[0-9]+",s);
+    }
+    public boolean range(int num,int min,int max)
+    {
+        if(num>max||num<min)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean email(String s)
+    {
+        return Pattern.matches("[a-zA-Z0-9_]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+",s);
+
+    }
+}
+
+
+
+
+
+
+
+
+
